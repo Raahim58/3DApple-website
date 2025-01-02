@@ -2,6 +2,8 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Highlights from "./components/highlights";
 import Model from "./components/model";
+import Features from "./components/features";
+import Howitworks from "./components/howitworks";
 
 const App = () => {
   return (
@@ -10,6 +12,8 @@ const App = () => {
       <Hero />
       <Highlights />
       <Model />
+      <Features />
+      <Howitworks />
     </main>
   )
 }
