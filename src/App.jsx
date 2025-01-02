@@ -4,7 +4,7 @@ import Highlights from "./components/highlights";
 import Model from "./components/model";
 import Features from "./components/features";
 import HowItWorks from "./components/howitworks";
-
+import Footer from "./components/footer";
 const App = () => {
   return (
     <main className="bg-black">
@@ -14,6 +14,7 @@ const App = () => {
       <Model />
       <Features />
       <HowItWorks />
+      <Footer />
     </main>
   )
 }
