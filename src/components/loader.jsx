@@ -1,6 +1,7 @@
 import React from 'react'
 import { Html } from '@react-three/drei'
 
+// add nice 2d or 3d loader
 const loader = () => {
     return (
         <Html>

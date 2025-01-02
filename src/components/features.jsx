@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { explore1Img, explore2Img, exploreVideo } from '../utils';
 import { gsap } from 'gsap';
 
+// add more styling colours etc
 const features = () => {
     const videoRef = useRef();
 
