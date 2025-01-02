@@ -11,12 +11,8 @@
 2. [**Core Features**](#core-features)  
 3. [**Tech Stack**](#tech-stack)  
 4. [**Setup & Installation**](#setup--installation)  
-5. [**Usage Instructions**](#usage-instructions)  
-6. [**Deployment Process**](#deployment-process)  
-7. [**Contributing**](#contributing)  
-8. [**License**](#license)  
-9. [**Acknowledgements**](#acknowledgements)
-
+5. [Usage Instructions](#usage-instructions)
+6. [Deployment Process](#deployment-process)
 ---
 
 ## **About the Project**
@@ -58,3 +54,53 @@ It’s designed as both a portfolio piece and a boilerplate for developers aimin
    ```bash
    git clone https://github.com/Raahim58/3DApple-website
    cd 3DApple-website
+   ```
+
+2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the Development Server
+
+```bash
+npm start
+# or
+yarn start
+```
+
+4. Access the Application
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Usage Instructions
+
+- Navigate to the project URL or run the development server locally as outlined above.
+- Observe the rotating 3D iPhone loader during page transitions or content loading.
+- Explore the responsive and interactive UI.
+
+---
+
+## Deployment Process
+
+### Build the Project
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+### Deploy on Vercel
+
+1. Connect your GitHub repository to Vercel.
+2. Configure your build settings:
+   - **Framework Preset**: React.js
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `build`
+3. Deploy the project and access the live application via your Vercel URL.
