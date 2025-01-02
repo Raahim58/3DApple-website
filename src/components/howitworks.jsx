@@ -1,12 +1,13 @@
-import { chipImg, frameImg, frameVideo } from '../utils'
-import { useGSAP } from '@gsap/react'
+import { chipImg, frameImg, frameVideo } from '../utils';
+import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { animateWithGsap } from '../utils/animations';
 
 // make the game and gpu vid keep playing
-const howitworks = () => {
+const HowItWorks = () => {
     const videoRef = useRef();
+
     useGSAP(() => {
         gsap.from('#chip', {
             scrollTrigger: {
@@ -18,9 +19,17 @@ const howitworks = () => {
             opacity: 0,
             duration: 2,
             ease: 'power2.inOut',
-        })
-        animateWithGsap('.g_fadeIn', { y: 0, opacity: 1, duration: 1, ease: 'power2.inOut'});
+        });
+        animateWithGsap('.g_fadeIn', { y: 0, opacity: 1, duration: 1, ease: 'power2.inOut' });
     }, []);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (video) {
+            video.play(); // Start playing the video
+        }
+    }, []);
+
     return (
         <section className='common-padding'>
             <div className='screen-max-width'>
@@ -32,22 +41,30 @@ const howitworks = () => {
                         A17 Pro chip.
                         <br /> A monster win for gaming.
                     </h2>
-                    <p className='hiw-subtitle'>
+                    <p className='text-gray-200 font-semibold text-xl md:text-2xl py-10 text-center'>
                         It's here. The biggest redesign in the history of Apple GPUs.
                     </p>
                 </div>
                 <div className='mt-10 md:mt-20 mb-14'>
                     <div className='relative h-full flex-center'>
                         <div className='overflow-hidden'>
-                            <img src={frameImg} alt='frame' className='bg-transparent relative z-10'/>
+                            <img src={frameImg} alt='frame' className='bg-transparent relative z-10' />
                         </div>
                         <div className='hiw-video'>
-                            <video className='pointer-events-none' playsInline preload='none' muted autoPlay ref={videoRef}>
-                                <source src={frameVideo} type='video/mp4'/>
+                            <video
+                                className='pointer-events-none'
+                                playsInline
+                                preload='none'
+                                muted
+                                autoPlay
+                                loop // Add loop attribute here
+                                ref={videoRef}
+                            >
+                                <source src={frameVideo} type='video/mp4' />
                             </video>
                         </div>
                     </div>
-                    <p className='text-gray font-semibold text-center mt-3'>Honkai: Star Rail</p>
+                    <p className='text-gray-200 font-semibold text-center mt-3'>Honkai: Star Rail</p>
                 </div>
                 <div className='hiw-text-container'>
                     <div className='flex flex-1 flex-col justify-center'>
@@ -58,22 +75,22 @@ const howitworks = () => {
                             </span>
                         </p>
                         <p className='hiw-text g_fadeIn'>
-                            Mobile  {' '}
+                            Mobile {' '}
                             <span className='text-white'>
                                 games will look and feel so immersive {' '}
                             </span>
                             with incredibly detailed environments and characters.
                         </p>
                     </div>
-                    <div className='flex-1 flex-justify-center flex-col g_fadeIn sm:text-center'>
-                        <p className='hiw-text'>New</p>
-                        <p className='hiw-bigtext'>Pro-class GPU</p>
-                        <p className='hiw-text'>with 6 cores</p>
+                    <div className='flex-1 flex-justify-center flex-col g_fadeIn'>
+                        <p className='text-gray-200 text-xl font-normal md:font-semibold'>new</p>
+                        <p className='hiw-bigtext'>PRO-CLASS GPU</p>
+                        <p className='text-gray-200 text-xl font-normal md:font-semibold'>with 6 cores</p>
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default howitworks
+export default HowItWorks;

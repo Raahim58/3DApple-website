@@ -39,7 +39,6 @@ const model = () => {
                 duration: 2,
             })
         }
-
         if (size === 'small') {
             animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
                 transform: 'translateX(0)',
@@ -55,7 +54,7 @@ const model = () => {
     return (
         <section className='common-padding'>
             <div className='screen-max-width'>
-                <h1 id='heading' className='section-heading'>Take a closer look.</h1>
+                <h1 id='heading' className='section-heading text-center' style={{color: model.color[0]}}>take a closer look</h1>
                 <div className='flex flex-col items-center mt-5'>
                     <div className='w-full h-[75vh] md:h-[90vh] overflow-hidden relative'>
                         <ModelView 
